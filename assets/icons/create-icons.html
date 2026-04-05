@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Download FORMate Icons</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #1a1612;
+            color: #fef9f0;
+            padding: 40px;
+            text-align: center;
+        }
+        h1 { color: #E89B4E; }
+        .icon-preview {
+            margin: 20px;
+            padding: 20px;
+            background: #2a2218;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        button {
+            background: #E89B4E;
+            color: #1a1612;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover { background: #F4CB80; }
+        .instructions {
+            background: #3a301e;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 600px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>📦 FORMate Icons - Ready to Download</h1>
+    
+    <div class="instructions">
+        <h3>Quick Instructions:</h3>
+        <ol>
+            <li>Click both buttons below to download icons</li>
+            <li>You'll get: <code>icon-192.png</code> and <code>icon-512.png</code></li>
+            <li>Upload to Netlify:
+                <ul>
+                    <li>Go to your Netlify dashboard</li>
+                    <li>Click "Deploys" → "Upload deploy"</li>
+                    <li>Create folder: <code>assets/icons/</code></li>
+                    <li>Put both PNG files inside</li>
+                    <li>Drag the entire project folder to Netlify</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <div class="icon-preview">
+        <h3>192×192 Icon</h3>
+        <canvas id="canvas192" width="192" height="192"></canvas>
+        <br>
+        <button onclick="download192()">Download icon-192.png</button>
+    </div>
+
+    <div class="icon-preview">
+        <h3>512×512 Icon</h3>
+        <canvas id="canvas512" width="512" height="512"></canvas>
+        <br>
+        <button onclick="download512()">Download icon-512.png</button>
+    </div>
+
+    <script>
+        function drawIcon(canvas) {
+            const ctx = canvas.getContext('2d');
+            const size = canvas.width;
+            
+            // Background gradient
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            gradient.addColorStop(0, '#F4CB80');
+            gradient.addColorStop(1, '#E89B4E');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, size, size);
+            
+            // Border
+            ctx.strokeStyle = '#D67B2E';
+            ctx.lineWidth = size * 0.03;
+            ctx.strokeRect(0, 0, size, size);
+            
+            // Text "FM"
+            ctx.fillStyle = '#1a1612';
+            ctx.font = `bold ${size * 0.45}px Arial, sans-serif`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('FM', size / 2, size / 2);
+            
+            // Subtle shadow
+            ctx.shadowColor = 'rgba(0,0,0,0.3)';
+            ctx.shadowBlur = size * 0.02;
+            ctx.shadowOffsetX = size * 0.01;
+            ctx.shadowOffsetY = size * 0.01;
+        }
+
+        function downloadCanvas(canvas, filename) {
+            canvas.toBlob(function(blob) {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = filename;
+                a.click();
+                URL.revokeObjectURL(url);
+            });
+        }
+
+        function download192() {
+            const canvas = document.getElementById('canvas192');
+            downloadCanvas(canvas, 'icon-192.png');
+        }
+
+        function download512() {
+            const canvas = document.getElementById('canvas512');
+            downloadCanvas(canvas, 'icon-512.png');
+        }
+
+        // Draw icons on load
+        window.onload = function() {
+            drawIcon(document.getElementById('canvas192'));
+            drawIcon(document.getElementById('canvas512'));
+        };
+    </script>
+</body>
+</html>
