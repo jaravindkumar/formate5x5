@@ -1,0 +1,156 @@
+╔══════════════════════════════════════════════════════════╗
+║  FORMATE COMPLETE - QUICK START GUIDE                    ║
+║  Camera + Voice + AI Form Analysis                       ║
+╚══════════════════════════════════════════════════════════╝
+
+🎯 WHAT THIS IS:
+Full-featured 5x5 workout tracker with:
+✅ Real-time camera form analysis (MediaPipe)
+✅ Automatic rep counting
+✅ Voice commands ("start recording", "log set", etc.)
+✅ AI coaching feedback
+✅ Workout history & progression
+
+⚡ FASTEST DEPLOYMENT (3 STEPS):
+
+STEP 1: Generate Icons
+───────────────────────────────────────────────────────────
+1. Open: assets/icons/create-icons.html
+2. Download icon-192.png
+3. Download icon-512.png  
+4. Save both in assets/icons/
+
+STEP 2: Deploy to Netlify
+───────────────────────────────────────────────────────────
+1. Go to: https://app.netlify.com/drop
+2. Drag formate-complete-ml folder
+3. Wait 30 seconds
+4. Done! You have a URL
+
+STEP 3: First Use
+───────────────────────────────────────────────────────────
+1. Visit your Netlify URL
+2. Complete onboarding
+3. Choose: "Yes - Full AI analysis"
+4. Start a workout
+5. Click "Record Set with Camera"
+6. Wait for camera wizard (first time: 30-60 sec)
+7. Position phone and record!
+
+📹 CAMERA FEATURES:
+
+When you click "Record Set with Camera":
+• 5-step camera setup wizard appears
+• Validates phone position & lighting
+• MediaPipe loads (first time only: ~60 seconds)
+• Records your set
+• Counts reps automatically
+• Analyzes form (scores 0-100, grades A-F)
+• Optional AI coaching feedback
+
+🎤 VOICE COMMANDS (Chrome/Edge only):
+
+Say these during workouts:
+• "Start recording" - Begin camera
+• "Stop recording" - End recording  
+• "Log set" - Quick manual log
+• "Next exercise" - Skip to next
+• "Show history" - View progress
+• "Pause" / "Resume" - Control workout
+
+Enable in: Settings → Voice Commands
+
+💡 TIPS:
+
+First Load:
+• MediaPipe downloads 26 MB (cached after)
+• Wait full 60 seconds before trying camera
+• Green "✅ Camera & Voice Ready!" appears when loaded
+
+Camera Position:
+• Portrait mode (vertical)
+• Full body visible
+• 6-10 feet from phone
+• Good lighting
+• Stable surface
+
+Battery:
+• Camera uses ~30-45% per hour
+• Disable when not needed
+• Manual logging = minimal battery
+
+Storage:
+• Videos: ~100-200 MB per set
+• Configurable retention (Settings)
+• Can delete old videos anytime
+
+🔧 TROUBLESHOOTING:
+
+❌ Blank page?
+→ Add icons! (see STEP 1)
+
+❌ "Camera system loading..."?
+→ Wait full 60 seconds on first load
+→ Refresh page if still waiting
+
+❌ Camera won't start?
+→ Must be HTTPS (Netlify provides)
+→ Check browser camera permissions
+→ Try different browser (Chrome works best)
+
+❌ Voice not working?
+→ Chrome/Edge only (not Safari)
+→ Check microphone permissions
+→ Background noise can interfere
+
+❌ Form analysis shows wrong grade?
+→ Ensure full body visible
+→ Good lighting required
+→ Camera stable (not hand-held)
+
+🎁 OPTIONAL FEATURES:
+
+AI Coaching (requires Groq API key):
+1. Get free key: https://console.groq.com/keys
+2. Settings → Setup Groq API Key
+3. Paste and save
+4. Get personalized coaching after each set!
+
+Voice Commands:
+• Enable in Settings
+• Chrome/Edge browsers only
+• Mic permissions required
+
+Video Storage:
+• Settings → Manage Storage
+• Choose retention policy
+• Clear old videos
+
+📊 WHAT YOU GET:
+
+Core Tracking:
+• 5x5 workout A & B
+• Automatic weight progression
+• Complete workout history
+• Personal records tracking
+
+AI Features:
+• Real-time skeleton tracking
+• Form analysis (25+ biomechanics criteria)
+• Rep counting (phase detection)
+• Form scores & grades
+• AI coaching (with API key)
+
+Other:
+• Works offline (after first load)
+• PWA installable on phone
+• No ads, no tracking
+• 100% local data storage
+
+═════════════════════════════════════════════════════════
+
+DEPLOY NOW: https://app.netlify.com/drop
+
+Just drag the folder. That's it.
+
+═════════════════════════════════════════════════════════
